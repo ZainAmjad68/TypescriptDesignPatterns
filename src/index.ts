@@ -1,3 +1,12 @@
+import { MatchReader } from "./MatchReader";
+import { Summary } from "./Summary";
+
+const matchReader = MatchReader.fromCSV("football.csv");
+const summary = Summary.winsAnalysisWithHtmlReport("Man City");
+
+matchReader.load();
+summary.buildAndPrintReport(matchReader.matchData);
+
 // Solution using Inheritance
 /*import { MatchReader } from "./MatchReader";
 import { MatchResult } from "./MatchResult";
@@ -20,6 +29,7 @@ for (let match of reader.data) {
 console.log(`Manchested City won ${manCwins} games`);
 */
 
+/*
 // Solution using Composition
 import { MatchReader } from "./MatchReader";
 import { MatchResult } from "./MatchResult";
@@ -43,3 +53,4 @@ for (let match of reader.matchData) {
 }
 
 console.log(`Manchested City won ${manCwins} games`);
+*/
